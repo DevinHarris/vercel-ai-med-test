@@ -1,7 +1,7 @@
 'use server'
 
 import { createOpenAI as createGroq } from '@ai-sdk/openai'
-import { generateText, streamText } from 'ai'
+import { streamText } from 'ai'
 import { createStreamableValue } from 'ai/rsc'
 
 export interface Message {

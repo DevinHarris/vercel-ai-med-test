@@ -1,16 +1,14 @@
 import { createOpenAI as createGroq } from '@ai-sdk/openai'
-import { generateText, streamText } from 'ai'
-import { NextResponse } from 'next/server';
+import { streamText } from 'ai'
 
 export const maxDuration = 30;
 
-export async function POST(req: Request) {
+export async function POST() {
    const groq = createGroq({
     baseURL: 'https://api.groq.com/openai/v1',
     apiKey: process.env.GROQ_API_KEY,
    })
 
-   const problem = 'I\'m a 29 year old male looking for natural ways to help my acid reflux.'
 
 //    const { text } = await generateText({
 //     model: groq('llama-3.3-70b-specdec'),
@@ -24,8 +22,6 @@ export async function POST(req: Request) {
 
 // )
 // console.log(text)
-
-const { messages } = await req.json();
 const result = streamText({
     model: groq('llama-3.3-70b-specdec'),
     system: 
