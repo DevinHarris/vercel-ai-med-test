@@ -24,7 +24,7 @@ export default function Home() {
       <div style={{ color: fontColor, paddingBlockEnd: '10rem' }}>
         {conversation.map((message, index) => (
           <div className="my-10" key={index}>
-              <span style={{ fontWeight: '500' }}>{message.role}</span>: <ReactMarkdown children={`${message.content}`} remarkPlugins={[remarkGfm]} />
+              <span style={{ fontWeight: '500' }}>{message.role}</span>: <p>{message.content}</p>
           </div>
         ))}
       </div>
