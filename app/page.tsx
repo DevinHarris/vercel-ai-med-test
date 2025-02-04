@@ -3,8 +3,6 @@
 import { useState } from "react"
 import { Message, continueConversation } from './actions'
 import { readStreamableValue } from "ai/rsc"
-import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
 
 export const maxDuration = 30;
 
